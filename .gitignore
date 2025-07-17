@@ -28,3 +28,6 @@ terraform.rc
 # Backup files
 *.backup
 *.bak
+
+# Shell scripts
+*.sh
