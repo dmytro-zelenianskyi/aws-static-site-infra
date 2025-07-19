@@ -37,3 +37,7 @@ resource "aws_s3_bucket_policy" "static_site" {
     }]
   })
 }
+
+terraform {
+  backend "s3" {}
+}

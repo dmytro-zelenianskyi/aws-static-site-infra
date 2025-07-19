@@ -39,7 +39,3 @@ resource "aws_dynamodb_table" "terraform_state" {
     type = "S"
   }
 }
-
-terraform {
-  backend "s3" {}
-}
