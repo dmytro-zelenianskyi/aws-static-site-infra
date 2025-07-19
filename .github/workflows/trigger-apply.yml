@@ -1,0 +1,19 @@
+name: Trigger Terraform Apply
+
+on:
+  push:
+    branches: [main]
+
+env:
+  PIPELINE_REPO : ${{ vars.PIPELINE_REPO }}
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send repository_dispatch to pipeline
+        run: |
+          curl -X POST https://api.github.com/repos/${{ env.PIPELINE_REPO }}/dispatches \
+            -H "Authorization: token ${{ secrets.PAT_PIPELINE }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            -d '{"event_type": "terraform-updated"}'

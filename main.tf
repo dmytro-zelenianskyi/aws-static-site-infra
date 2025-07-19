@@ -1,11 +1,6 @@
 resource "aws_s3_bucket" "static_site" {
-  bucket        = var.bucket_name
+  bucket        = var.aws_content_bucket
   force_destroy = true
-
-  tags = {
-    Name        = "StaticSiteBucket"
-    Environment = "dev"
-  }
 }
 
 resource "aws_s3_bucket_website_configuration" "static_site" {
