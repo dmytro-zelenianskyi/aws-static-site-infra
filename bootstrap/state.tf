@@ -41,11 +41,5 @@ resource "aws_dynamodb_table" "terraform_state" {
 }
 
 terraform {
-  backend "s3" {
-    bucket         = var.aws_terraform_bucket
-    key            = "${var.project_name}/terraform.tfstate"
-    region         = var.aws_region
-    encrypt        = true
-    dynamodb_table = "terraform-locks"
-  }
+  backend "s3" {}
 }
