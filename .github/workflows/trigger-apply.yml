@@ -16,4 +16,5 @@ jobs:
           curl -X POST https://api.github.com/repos/${{ env.PIPELINE_REPO }}/dispatches \
             -H "Authorization: token ${{ secrets.PAT_PIPELINE }}" \
             -H "Accept: application/vnd.github.v3+json" \
-            -d '{"event_type": "terraform-updated"}'
+            -d '{"event_type": "terraform-updated"}' \
+            --fail --verbose
