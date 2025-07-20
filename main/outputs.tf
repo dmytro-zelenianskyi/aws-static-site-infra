@@ -1,4 +1,4 @@
 output "cloudfront_url" {
-  description = "The URL of the CloudFront distribution"
-  value       = aws_cloudfront_distribution.static_site.domain_name
+  description = "The full URL of the CloudFront distribution"
+  value       = "https://${aws_cloudfront_distribution.static_site.domain_name}"
 }
