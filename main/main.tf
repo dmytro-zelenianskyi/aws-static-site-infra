@@ -36,6 +36,8 @@ resource "aws_s3_bucket_policy" "static_site" {
       Resource  = "${aws_s3_bucket.static_site.arn}/*"
     }]
   })
+
+  depends_on = [aws_s3_bucket_public_access_block.static_site]
 }
 
 terraform {
