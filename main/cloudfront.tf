@@ -47,7 +47,6 @@ resource "aws_cloudfront_distribution" "static_site" {
   }
 
   tags = {
-    Name        = "StaticSiteCDN"
-    Environment = "dev"
+    App = "static-site"
   }
 }

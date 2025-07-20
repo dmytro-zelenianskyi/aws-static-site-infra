@@ -1,6 +1,10 @@
 resource "aws_s3_bucket" "static_site" {
   bucket        = var.aws_content_bucket
   force_destroy = true
+
+  tags = {
+    App = "static-site"
+  }
 }
 
 resource "aws_s3_bucket_website_configuration" "static_site" {
